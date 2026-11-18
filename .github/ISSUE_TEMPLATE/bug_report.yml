@@ -1,0 +1,35 @@
+name: Bug report
+description: Wrong, missing or empty results, or a crash
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: Never paste an API key or a proxy password. Replace them with `qd_live_...` and `user:pass`.
+  - type: dropdown
+    id: engine
+    attributes:
+      label: Engine
+      options: [quanticdata, local]
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version, Python and OS
+      placeholder: gmaps-places 0.1.0, Python 3.12, Windows 11
+    validations:
+      required: true
+  - type: textarea
+    id: command
+    attributes:
+      label: Command you ran
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: What happened and what you expected
+      description: For the local engine, attach the HTML of the page that failed (run with --headful to see it) if you can.
+    validations:
+      required: true
